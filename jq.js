@@ -1,26 +1,47 @@
 let lista = [
     {
-        nev: "",
-        tul1: "",
-        tul2: "",
+        nev: "NÉV",
+        tul1: "ELSŐ TULAJDONSÁG",
+        tul2: "MÁSODIK TULAJDONSÁG",
     },
     {
-        nev: "",
-        tul1: "",
-        tul2: "",
+        nev: "Autó",
+        tul1: "piros",
+        tul2: "négy kerekű",
     },
     {
-        nev: "",
-        tul1: "",
-        tul2: "",
+        nev: "Saláta",
+        tul1: "zöld",
+        tul2: "fejes",
     },
     {
-        nev: "",
-        tul1: "",
-        tul2: "",
+        nev: "Bolt",
+        tul1: "kicsi",
+        tul2: "vegyes",
     },
 ];
 
 $(function(){
-    
-})
+    let feltolt = osszeallit();
+    const ARTICLE = $("article");
+    ARTICLE.html(feltolt);
+});
+
+
+function osszeallit(){
+    let txt = "<table>";
+    for (let i = 0; i < lista.length; i++) {
+        txt += "<tr>";
+        let obj = lista[i];
+        for (let j = 0; j < obj; j++) {
+            if (j == 0) {
+                txt += `<th>${obj[j]}</th>`;
+            } else {
+                txt += `<td>${obj[j]}</td>`;
+            }
+        }
+        txt += "</tr>";
+    }
+    txt += "</table>"
+    return txt;
+}
