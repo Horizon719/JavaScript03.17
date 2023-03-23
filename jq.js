@@ -32,13 +32,15 @@ function osszeallit(){
     let txt = "<table>";
     for (let i = 0; i < lista.length; i++) {
         txt += "<tr>";
-        let obj = lista[i];
-        for (let j = 0; j < obj; j++) {
+        let obj = lista[i]; 
+        for (const objElem in obj) {
+            let j = 0;
             if (j == 0) {
-                txt += `<th>${obj[j]}</th>`;
+                txt += `<th>${obj[objElem]}</th>`;
             } else {
-                txt += `<td>${obj[j]}</td>`;
+                txt += `<td>${obj[objElem]}</td>`;
             }
+            j++;
         }
         txt += "</tr>";
     }
